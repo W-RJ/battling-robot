@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33bbff"
+    tools:context=".ui.controller.ControllerActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <ImageView
+            android:id="@+id/rocker"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/rocker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guide_left"
+            app:srcCompat="@drawable/controller_rocker" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/turning"
+            app:layout_constraintEnd_toEndOf="@+id/turning"
+            app:layout_constraintStart_toStartOf="@+id/turning"
+            app:layout_constraintTop_toTopOf="@+id/turning"
+            app:srcCompat="@drawable/controller_rocker" />
+
+        <ImageView
+            android:id="@+id/turning"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/rocker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guide_right"
+            android:alpha="0.8"
+            app:srcCompat="@android:drawable/bottom_bar" />
+
+        <ImageButton
+            android:id="@+id/action_top1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/action_top1"
+            app:layout_constraintBottom_toTopOf="@+id/guide_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/gallery_thumb" />
+
+        <ImageButton
+            android:id="@+id/action_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/guide_right"
+            app:layout_constraintEnd_toStartOf="@+id/action_top1"
+            app:srcCompat="@android:drawable/gallery_thumb"
+            android:contentDescription="@string/action_top2" />
+
+        <ImageButton
+            android:id="@+id/action_top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/guide_right"
+            app:layout_constraintEnd_toStartOf="@+id/action_top2"
+            app:srcCompat="@android:drawable/gallery_thumb"
+            android:contentDescription="@string/action_top3" />
+
+        <ImageButton
+            android:id="@+id/action_left1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/turning"
+            app:srcCompat="@android:drawable/gallery_thumb"
+            android:contentDescription="@string/action_left1" />
+
+        <ImageButton
+            android:id="@+id/action_left2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/action_left1"
+            app:layout_constraintEnd_toStartOf="@+id/turning"
+            app:srcCompat="@android:drawable/gallery_thumb"
+            android:contentDescription="@string/action_left2" />
+
+        <TextView
+            android:id="@+id/text_top1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动作1"
+            app:layout_constraintBottom_toBottomOf="@+id/action_top1"
+            app:layout_constraintEnd_toEndOf="@id/action_top1"
+            app:layout_constraintStart_toStartOf="@id/action_top1"
+            app:layout_constraintTop_toTopOf="@+id/action_top1" />
+
+        <TextView
+            android:id="@+id/text_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动作2"
+            app:layout_constraintBottom_toBottomOf="@+id/action_top2"
+            app:layout_constraintEnd_toEndOf="@id/action_top2"
+            app:layout_constraintStart_toStartOf="@id/action_top2"
+            app:layout_constraintTop_toTopOf="@+id/action_top2" />
+
+        <TextView
+            android:id="@+id/text_top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动作3"
+            app:layout_constraintBottom_toBottomOf="@+id/action_top3"
+            app:layout_constraintEnd_toEndOf="@id/action_top3"
+            app:layout_constraintStart_toStartOf="@id/action_top3"
+            app:layout_constraintTop_toTopOf="@+id/action_top3" />
+
+        <TextView
+            android:id="@+id/text_left1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动作4"
+            app:layout_constraintBottom_toBottomOf="@+id/action_left1"
+            app:layout_constraintEnd_toEndOf="@id/action_left1"
+            app:layout_constraintStart_toStartOf="@id/action_left1"
+            app:layout_constraintTop_toTopOf="@+id/action_left1" />
+
+        <TextView
+            android:id="@+id/text_left2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="普攻"
+            app:layout_constraintBottom_toBottomOf="@+id/action_left2"
+            app:layout_constraintEnd_toEndOf="@id/action_left2"
+            app:layout_constraintStart_toStartOf="@id/action_left2"
+            app:layout_constraintTop_toTopOf="@+id/action_left2" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_battle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="战斗模式"
+            android:textSize="30sp"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="血量：100%"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/dummy_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dummy_button" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
